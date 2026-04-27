@@ -1,0 +1,14 @@
+.env
+**/.env
+
+node_modules/
+**/node_modules/
+
+vendor/
+**/vendor/
+
+*.log
+.DS_Store
+
+storage/logs/
+bootstrap/cache/
