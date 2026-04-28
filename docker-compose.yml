@@ -29,7 +29,7 @@ services:
     environment:
       APP_NAME: SportFieldHub Auth Service
       APP_ENV: local
-      APP_KEY: base64:change_this_after_key_generate
+      APP_KEY: ${AUTH_APP_KEY}
       APP_DEBUG: "true"
       APP_URL: http://localhost:8001
       DB_CONNECTION: mysql
