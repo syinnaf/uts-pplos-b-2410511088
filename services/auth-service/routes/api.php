@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Middleware\JwtAuthMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OAuthController;
+use App\Http\Controllers\InternalUserController;
+use App\Http\Middleware\InternalServiceMiddleware;
 
 Route::get('/health', function () {
     return response()->json([
@@ -26,3 +28,9 @@ Route::prefix('auth')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
     });
 });
+
+Route::prefix('internal')
+    ->middleware(InternalServiceMiddleware::class)
+    ->group(function () {
+        Route::get('/users/{id}', [InternalUserController::class, 'show']);
+    });
