@@ -5,6 +5,7 @@ const morgan = require('morgan');
 require('dotenv').config();
 
 const healthRoutes = require('./routes/healthRoutes');
+const fieldRoutes = require('./routes/fieldRoutes');
 const { testConnection } = require('./config/db');
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 app.use('/', healthRoutes);
+app.use('/', fieldRoutes);
 
 app.use((req, res) => {
   return res.status(404).json({
