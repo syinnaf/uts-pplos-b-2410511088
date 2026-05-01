@@ -83,7 +83,7 @@ services:
       DB_PASSWORD: booking_password
       JWT_SECRET: ${JWT_SECRET}
       INTERNAL_SERVICE_TOKEN: ${INTERNAL_SERVICE_TOKEN}
-      AUTH_SERVICE_URL: http://auth-service:8001
+      AUTH_SERVICE_URL: http://auth-service:8001/api
       FIELD_SERVICE_URL: http://field-service:8002
     depends_on:
       - booking-db
