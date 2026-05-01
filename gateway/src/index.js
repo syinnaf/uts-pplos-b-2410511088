@@ -47,7 +47,7 @@ app.get('/health', (req, res) => {
   });
 });
 
-app.use('/api/auth', authProxy);
+app.use('/api/auth', verifyJwt, authProxy);
 
 app.use('/api/fields', verifyJwt, fieldProxy);
 app.use('/api/bookings', verifyJwt, bookingProxy);

@@ -6,13 +6,16 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "keywords": ["api-gateway",
+  "keywords": [
+    "api-gateway",
     "sportfieldhub",
-    "microservice"],
+    "microservice"
+  ],
   "author": "Syifa Nafisa",
   "license": "ISC",
   "description": "API Gateway for SportFieldHub microservices",
   "dependencies": {
+    "axios": "^1.15.2",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",

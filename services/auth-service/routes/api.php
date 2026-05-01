@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OAuthController;
 use App\Http\Controllers\InternalUserController;
 use App\Http\Middleware\InternalServiceMiddleware;
+use App\Http\Controllers\InternalTokenController;
 
 Route::get('/health', function () {
     return response()->json([
@@ -33,4 +34,5 @@ Route::prefix('internal')
     ->middleware(InternalServiceMiddleware::class)
     ->group(function () {
         Route::get('/users/{id}', [InternalUserController::class, 'show']);
+        Route::post('/tokens/verify', [InternalTokenController::class, 'verify']);
     });
