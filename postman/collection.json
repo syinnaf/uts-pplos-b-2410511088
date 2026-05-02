@@ -1,0 +1,836 @@
+{
+  "info": {
+    "_postman_id": "fdf23d83-c1e4-489a-969b-ad2038f82862",
+    "name": "SportFieldHub UTS PPLoS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39376558",
+    "_collection_link": "https://go.postman.co/collection/39376558-fdf23d83-c1e4-489a-969b-ad2038f82862?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Syifa Nafisa\",\r\n  \"email\": \"syifanafisa@gmail.com\",\r\n  \"username\": \"SyifaNafisaUhuy\",\r\n  \"password\": \"syinna2596\",\r\n  \"password_confirmation\": \"syinna2596\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/auth/register",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"identifier\": \"syifanafisa@gmail.com\",\r\n  \"password\": \"syinna2596\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/auth/login",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Me",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiIxNjI1YWNhNi01YWVlLTRmYmMtYjllZC1hMmMzZjllZmQ0YjYiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc2NjI1NTEsImV4cCI6MTc3NzY2MzQ1MX0.BM8BymtLEMZZWSNdYAS1G6ci9oMLTcXBwd6Vz1krnT4",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/auth/me",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"refresh_token\": \"ndhklYdmwUubeSKp4A5GADub6o4PGoDgB9NmlcqFRzlvw34NyZsOg2TRtUaIW83K2gz9oH035myiHCpx\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/auth/refresh",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Google OAuth Redirect",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{gateway_url}}/api/auth/google/redirect",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "google",
+                "redirect"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiI2ZTUwNzA4Mi0wOGI1LTQ4ZGItYjJjNS01YjdlZTA5MmUzMTYiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc3MjU0NDYsImV4cCI6MTc3NzcyNjM0Nn0.lfXiQ2QtCwzDteqoJ-iPHRsRoV07zc-St8-jSJixet0",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{gateway_url}}/api/auth/logout",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02 Field",
+      "item": [
+        {
+          "name": "List Fields",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiJiYzRjOGNmOC03NjViLTQxNzMtOWFkNS00NjM2NjM4MGFlNjgiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc2NjMxODgsImV4cCI6MTc3NzY2NDA4OH0.hVUqCzJHxgMIfVJjySJrhriwrfZAUYrgp0_nwdjsoDc",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{gateway_url}}/api/fields?page=1&per_page=5",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "fields"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Fields with Filter",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiJiYzRjOGNmOC03NjViLTQxNzMtOWFkNS00NjM2NjM4MGFlNjgiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc2NjMxODgsImV4cCI6MTc3NzY2NDA4OH0.hVUqCzJHxgMIfVJjySJrhriwrfZAUYrgp0_nwdjsoDc",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/fields?page=1&per_page=5&sport_type=futsal&location=Jakarta",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "fields"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "5"
+                },
+                {
+                  "key": "sport_type",
+                  "value": "futsal"
+                },
+                {
+                  "key": "location",
+                  "value": "Jakarta"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Field Detail",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiJiYzRjOGNmOC03NjViLTQxNzMtOWFkNS00NjM2NjM4MGFlNjgiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc2NjMxODgsImV4cCI6MTc3NzY2NDA4OH0.hVUqCzJHxgMIfVJjySJrhriwrfZAUYrgp0_nwdjsoDc",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/fields/1",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "fields",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Field Slots",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiJiYzRjOGNmOC03NjViLTQxNzMtOWFkNS00NjM2NjM4MGFlNjgiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc2NjMxODgsImV4cCI6MTc3NzY2NDA4OH0.hVUqCzJHxgMIfVJjySJrhriwrfZAUYrgp0_nwdjsoDc",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/fields/1/slots?date=2026-04-30",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "fields",
+                "1",
+                "slots"
+              ],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "2026-04-30"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Slot Status Direct Field Service",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "X-Internal-Token",
+                "value": "sportfieldhub_internal_token_2410511088",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"available\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{field_url}}/fields/1/slots/1/status",
+              "host": [
+                "{{field_url}}"
+              ],
+              "path": [
+                "fields",
+                "1",
+                "slots",
+                "1",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 Booking",
+      "item": [
+        {
+          "name": "Create Booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiJiYzRjOGNmOC03NjViLTQxNzMtOWFkNS00NjM2NjM4MGFlNjgiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc2NjMxODgsImV4cCI6MTc3NzY2NDA4OH0.hVUqCzJHxgMIfVJjySJrhriwrfZAUYrgp0_nwdjsoDc",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user_id\": 1,\r\n  \"court_id\": 1,\r\n  \"booking_date\": \"2026-04-30\",\r\n  \"slot_ids\": [1, 2],\r\n  \"notes\": \"Booking test via API Gateway\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/bookings",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Bookings",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiI2ZTUwNzA4Mi0wOGI1LTQ4ZGItYjJjNS01YjdlZTA5MmUzMTYiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc3MjU0NDYsImV4cCI6MTc3NzcyNjM0Nn0.lfXiQ2QtCwzDteqoJ-iPHRsRoV07zc-St8-jSJixet0",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user_id\": 1,\r\n  \"court_id\": 1,\r\n  \"booking_date\": \"2026-04-30\",\r\n  \"slot_ids\": [1],\r\n  \"notes\": \"Booking test via API Gateway\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/bookings?page=1&per_page=10",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Booking Details",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiI2ZTUwNzA4Mi0wOGI1LTQ4ZGItYjJjNS01YjdlZTA5MmUzMTYiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc3MjU0NDYsImV4cCI6MTc3NzcyNjM0Nn0.lfXiQ2QtCwzDteqoJ-iPHRsRoV07zc-St8-jSJixet0",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/bookings/2",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Owner Dashboard",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiI2ZTUwNzA4Mi0wOGI1LTQ4ZGItYjJjNS01YjdlZTA5MmUzMTYiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc3MjU0NDYsImV4cCI6MTc3NzcyNjM0Nn0.lfXiQ2QtCwzDteqoJ-iPHRsRoV07zc-St8-jSJixet0",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/owner/dashboard",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "owner",
+                "dashboard"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pay DP",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiI2ZTUwNzA4Mi0wOGI1LTQ4ZGItYjJjNS01YjdlZTA5MmUzMTYiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc3MjU0NDYsImV4cCI6MTc3NzcyNjM0Nn0.lfXiQ2QtCwzDteqoJ-iPHRsRoV07zc-St8-jSJixet0",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"payment_method\": \"manual_transfer\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/bookings/2/dp",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings",
+                "2",
+                "dp"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pay Full",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiI2ZTUwNzA4Mi0wOGI1LTQ4ZGItYjJjNS01YjdlZTA5MmUzMTYiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc3MjU0NDYsImV4cCI6MTc3NzcyNjM0Nn0.lfXiQ2QtCwzDteqoJ-iPHRsRoV07zc-St8-jSJixet0",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"payment_method\": \"manual_transfer\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{gateway_url}}/api/bookings/2/pay-full",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "bookings",
+                "2",
+                "pay-full"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04 Gateway Security Test",
+      "item": [
+        {
+          "name": "Protected Endpoint Without Token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{gateway_url}}/api/fields",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "fields"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Token After Logout",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Iiwic3ViIjozLCJqdGkiOiI2ZTUwNzA4Mi0wOGI1LTQ4ZGItYjJjNS01YjdlZTA5MmUzMTYiLCJuYW1lIjoiU3lpZmEgTmFmaXNhIiwiZW1haWwiOiJzeWlmYW5hZmlzYUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Nzc3MjU0NDYsImV4cCI6MTc3NzcyNjM0Nn0.lfXiQ2QtCwzDteqoJ-iPHRsRoV07zc-St8-jSJixet0",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{gateway_url}}/api/fields",
+              "host": [
+                "{{gateway_url}}"
+              ],
+              "path": [
+                "api",
+                "fields"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "gateway_url",
+      "value": ""
+    },
+    {
+      "key": "auth_url",
+      "value": ""
+    },
+    {
+      "key": "field_url",
+      "value": ""
+    },
+    {
+      "key": "booking_url",
+      "value": ""
+    },
+    {
+      "key": "access_token",
+      "value": ""
+    },
+    {
+      "key": "refresh_token",
+      "value": ""
+    },
+    {
+      "key": "internal_token",
+      "value": ""
+    },
+    {
+      "key": "booking_id",
+      "value": ""
+    }
+  ]
+}
