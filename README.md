@@ -551,7 +551,7 @@ Dokumen pendukung project tersedia pada folder berikut:
 
 * Diagram arsitektur: `docs/arsitektur.png`
 * Laporan UTS: `docs/laporan-uts.pdf`
-* Video demo: `ISI_LINK_YOUTUBE_UNLISTED_DI_SINI`
+* Video demo: `https://youtu.be/rZxyVLOFcg8`
 
 ---
 
